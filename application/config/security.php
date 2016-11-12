@@ -1,0 +1,1 @@
+<?php $config['unauthorized_redirect'] = 'login_app/logout_app1'; 
