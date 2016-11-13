@@ -114,7 +114,7 @@
 
             <div class="ibox-title">
 
-               <h5>Historias Clínicas Recientes</h5>
+               <h5>Historia Clínica Reciente</h5>
 
                <div class="ibox-tools">
 
@@ -158,7 +158,7 @@
 
                   <div class="table-responsive">
 
-                     <table id="hc_recientes" class="table table-striped table-hover dataTables-example" >
+                     <table id="cc_recientes" class="table table-striped table-hover dataTables-example" >
 
                         <thead>
 
