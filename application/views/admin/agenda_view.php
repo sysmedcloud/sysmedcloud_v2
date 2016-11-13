@@ -22,7 +22,7 @@
 
                 <button class="btn btn-warning" data-calendar-view="week">Semana</button>
 
-                <button class="btn btn-warning" data-calendar-view="day">Día</button>
+                <button class="btn btn-warning" data-calendar-view="day">Dia</button>
 
             </div>
 
