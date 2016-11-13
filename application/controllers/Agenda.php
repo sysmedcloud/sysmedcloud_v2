@@ -137,13 +137,13 @@ class Agenda extends CI_Controller {
     /**************************************************************************/
     public function descripcion_evento($id){
         
-        $session        = $this->general_sessions->datosDeSession(); 
+        $data['session']         = $this->general_sessions->datosDeSession(); 
         
         //Obtenemos el id del evento
         $id_cita_medica = evaluar($id);
         
         //Obtener datos de la cita medica
-        $row = $this->agenda_model->info_cita_medica($id_cita_medica,$session["id_empresa"]);
+        $row = $this->agenda_model->info_cita_medica($id_cita_medica,$data['session']["id_empresa"]);
         
         $data["estadosCitas"]  = $this->dropdown_model->cargarEstadosCitasMed($row["id_estado_cita_medica"]);
         
@@ -170,7 +170,7 @@ class Agenda extends CI_Controller {
     public function accion_agenda(){
         
         //CARGAMOS DATOS DE SESSION
-        $session        = $this->general_sessions->datosDeSession(); 
+        $data['session']         = $this->general_sessions->datosDeSession(); 
          
         //BOTON DE ACCION
         $btn_accion = $this->input->post("btn_accion");
@@ -210,8 +210,8 @@ class Agenda extends CI_Controller {
                     //Creamos arreglo con los datos de la cita
                     $arr_data_cita = array(
                         "id_cita_medica"=> $id_cita_medica,
-                        "id_empresa"    => $session["id_empresa"],
-                        "id_profesional"=> $session["id_usuario"],
+                        "id_empresa"    => $data['session']["id_empresa"],
+                        "id_profesional"=> $data['session']["id_usuario"],
                         "id_paciente"   => $this->input->post("id_paciente"),
                         "rut_paciente"  => $this->input->post("rut_paciente"),
                         "inicio"        => _formatear($from),

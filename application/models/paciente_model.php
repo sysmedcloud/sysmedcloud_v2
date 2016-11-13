@@ -756,5 +756,12 @@ class Paciente_model extends CI_Model
             return json_encode(array());
         }
     }
-
+    
+    function get_img($idperfil){
+        
+        $q = $this->db->query("SELECT imagen 
+                                FROM tbl_usuarios 
+                                WHERE id_usuario = ". $idperfil);
+        return $q->result_array()[0];
+    }
 }	
