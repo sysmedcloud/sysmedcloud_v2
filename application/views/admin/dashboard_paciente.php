@@ -57,55 +57,7 @@
       </div>     
 
    </div>
-
-   <div class="row">
-
-      <div  id="cm_pacientes_genero" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto" class="col-lg-6">
-
-         <table id="cm_pacientes_genero_datatable">
-
-            <thead>
-
-               <tr>
-
-                  <th></th>
-
-                  <th>Hombres</th>
-
-                  <th>Mujeres</th>
-
-               </tr>
-
-            </thead>
-
-            <tbody>
-
-               <tr>
-
-                  <th>Consultas Médicas</th>
-
-                  <td><?=$dist_hm['M'];?></td>
-
-                  <td><?=$dist_hm['F'];?></td>
-
-               </tr>
-
-            </tbody>
-
-         </table>
-
-      </div>
-
-      <div class="col-lg-6">
-
-         <div id="pacientes_por_genero" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto"></div>
-
-      </div>
-
-   </div>
-
    <br>
-
    <div class="row">
 
       <div class="col-lg-12">
@@ -197,3 +149,48 @@
    </div>
 
 </div>
+<div class="row">
+
+      <div  id="cm_pacientes_genero" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto" class="col-lg-6">
+
+         <table id="cm_pacientes_genero_datatable">
+
+            <thead>
+
+               <tr>
+
+                  <th></th>
+
+                  <th>Hombres</th>
+
+                  <th>Mujeres</th>
+
+               </tr>
+
+            </thead>
+
+            <tbody>
+
+               <tr>
+
+                  <th>Consultas Médicas</th>
+
+                  <td><?=$dist_hm['M'];?></td>
+
+                  <td><?=$dist_hm['F'];?></td>
+
+               </tr>
+
+            </tbody>
+
+         </table>
+
+      </div>
+
+      <div class="col-lg-6">
+
+         <div id="pacientes_por_genero" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto"></div>
+
+      </div>
+
+   </div>
