@@ -374,6 +374,13 @@ class Dashboard_model extends CI_Model
             return 0;
             }
         }
+
+    public function get_id_historia_clinica($id_usuario){
+        $query = $this->db->query("SELECT id_historia_medica  
+                                    FROM tbl_historias_medicas 
+                                    WHERE id_paciente = $id_usuario ");
+        return $query->result_array()[0];
+    }
     
 
 
