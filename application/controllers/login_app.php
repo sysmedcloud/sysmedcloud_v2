@@ -36,7 +36,7 @@ class Login_app extends CI_Controller {
             case 3: redirect(base_url().'dashboard_admin');break;
             
             //Usuario tipo paciente (paciente de alguna clinica)
-            case 4: redirect(base_url().'paciente_admin');break;
+            case 4: redirect(base_url().'dashboard_paciente');break;
             
             //Mostrar por defecto pagina de inicio de sesion
             default: $this->signIn();

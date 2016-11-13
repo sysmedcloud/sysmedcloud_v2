@@ -12,7 +12,7 @@
 
                <span class="label label-success pull-right"></span>
 
-               <h5>Pacientes / Test</h5>
+               <h5>Pacientes</h5>
 
             </div>
 
