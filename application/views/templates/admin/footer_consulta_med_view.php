@@ -1,216 +1,1 @@
-</body>
-<script>
-    //Archivos examen rev. por sistema
-    $('#archivos_rs').fileinput({
-        uploadUrl: "<?php echo base_url(); ?>consulta_medica/upload_files/<?php echo $token_rs; ?>",
-        deleteUrl: "<?php echo base_url(); ?>consulta_medica/delete_files/<?php echo $token_rs; ?>",
-        maxFilePreviewSize: 10240,
-        uploadAsync: true,
-        minFileCount: 1,
-        maxFileCount: 20,
-        showUpload: false, 
-        showRemove: false,
-        language: 'es',
-        allowedFileExtensions : ['jpg', 'png','gif','pdf','csv','doc','docx','xls','xlsx','ppt','pptx','avi','mpg','mkv','mov','3gp','webm','wmv','flv','mp3','mp4','wav'],
-		initialPreview: [
-			<?php foreach($archivos_rs as $archivo){
-
-				$arch 	= explode(".",$archivo);
-				$ext 	= $arch[1];
-
-				switch ($ext) {
-					
-					case 'mp4': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'avi': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mpg': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mkv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mov': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case '3gp': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'webm': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'wmv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'flv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-
-					case 'mp3': ?>
-					'<audio controls="" class="kv-preview-data"><source type="audio/mpeg" src="<?php echo base_url().$archivo; ?>"></source><div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></audio>',
-					<?php break;
-					case 'wav': ?>
-					'<audio controls="" class="kv-preview-data"><source type="audio/mpeg" src="<?php echo base_url().$archivo; ?>"></source><div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></audio>',
-					<?php break;
-											
-					case 'jpg': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					case 'png': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					case 'gif': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					
-					case 'pdf': ?>
-					'<embed class="kv-preview-data" height="100px" width="100px" type="application/pdf" src="<?php echo base_url().$archivo; ?>">',
-					<?php break;
-
-					case 'xls': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'xlsx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'ppt': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'pptx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'doc': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'docx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-
-					default: ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-				}
-			}
-			?>
-		],
-	    initialPreviewConfig: [
-	    <?php foreach($archivos_rs as $archivo){ $infoArchivos=explode("/",$archivo);?>
-		{caption: "<?php echo $infoArchivos[1];?>",  height: "100px", url: "<?php echo base_url(); ?>consulta_medica/delete_files/<?php echo $token_rs; ?>", key:"<?php echo $infoArchivos[1];?>"},
-		<?php } ?>
-		]
-    }).on("filebatchselected", function(event, files) {
-	
-	$("#archivos_rs").fileinput("upload");
-		
-	});
-   
-   //Archivos examen fisico
-   $('#archivos_ef').fileinput({
-        uploadUrl: "<?php echo base_url(); ?>consulta_medica/upload_files_ef/<?php echo $token_ef; ?>",
-        deleteUrl: "<?php echo base_url(); ?>consulta_medica/delete_files_ef/<?php echo $token_ef; ?>",
-        maxFilePreviewSize: 10240,
-        uploadAsync: true,
-        minFileCount: 1,
-        maxFileCount: 20,
-        showUpload: false, 
-        showRemove: false,
-        language: 'es',
-        allowedFileExtensions : ['jpg', 'png','gif','pdf','csv','doc','docx','xls','xlsx','ppt','pptx','avi','mpg','mkv','mov','3gp','webm','wmv','flv','mp3','mp4','wav'],
-		initialPreview: [
-			<?php foreach($archivos_ef as $archivo){
-
-				$arch 	= explode(".",$archivo);
-				$ext 	= $arch[1];
-
-				switch ($ext) {
-					
-					case 'mp4': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'avi': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mpg': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mkv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'mov': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case '3gp': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'webm': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'wmv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-					case 'flv': ?>
-					'<video src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" controls style="width:auto;height:100px;"><source src="foo.ogg" type="video/ogg"><source src="foo.mp4" type="video/mp4">Tu navegador no implementa el elemento <code>video</code>.<div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></video>',
-					<?php break;
-
-					case 'mp3': ?>
-					'<audio controls="" class="kv-preview-data"><source type="audio/mpeg" src="<?php echo base_url().$archivo; ?>"></source><div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></audio>',
-					<?php break;
-					case 'wav': ?>
-					'<audio controls="" class="kv-preview-data"><source type="audio/mpeg" src="<?php echo base_url().$archivo; ?>"></source><div class="file-preview-other"><span class="file-other-icon"><i class="glyphicon glyphicon-file"></i></span></div></audio>',
-					<?php break;
-											
-					case 'jpg': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					case 'png': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					case 'gif': ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-					
-					case 'pdf': ?>
-					'<embed class="kv-preview-data" height="100px" width="100px" type="application/pdf" src="<?php echo base_url().$archivo; ?>">',
-					<?php break;
-
-					case 'xls': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'xlsx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'ppt': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'pptx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'doc': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-					case 'docx': ?>
-				    '<object height="100px" width="100px" type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data="blob:http://localhost/616e086f-57f4-4e96-a161-cfac858de8e8" class="kv-preview-data file-object"><param value="<?php echo base_url().$archivo; ?>" name="movie"><param value="true" name="controller"><param value="true" name="allowFullScreen"><param value="always" name="allowScriptAccess"><param value="false" name="autoPlay"><param value="false" name="autoStart"><param value="high" name="quality"><div class="file-preview-other"><span class="file-other-icon"><a href="<?php echo base_url().$archivo; ?>"  target="_blanck"><i class="glyphicon glyphicon-file"></i></a></span></div></object>',
-					<?php break;
-
-					default: ?>
-					'<img src="<?php echo base_url().$archivo; ?>" class="kv-preview-data file-preview-image" style="width:auto;height:100px;">',
-					<?php break;
-				}
-			}
-			?>
-		],
-	    initialPreviewConfig: [
-	    <?php foreach($archivos_ef as $archivo){ $infoArchivos=explode("/",$archivo);?>
-		{caption: "<?php echo $infoArchivos[1];?>",  height: "100px", url: "<?php echo base_url(); ?>consulta_medica/delete_files_ef/<?php echo $token_ef; ?>", key:"<?php echo $infoArchivos[1];?>"},
-		<?php } ?>
-		]
-    }).on("filebatchselected", function(event, files) {
-	
-	$("#archivos_ef").fileinput("upload");
-		
-	});     
-        
-</script>
-</html>
+<!DOCTYPE html><html><head>    <meta charset="utf-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>SYSMEDCLOUD CHILE | DASHBOARD - PANEL DE CONTROL</title>    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">    <!--<link href="<?php echo base_url(); ?>css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />-->    <link href="<?php echo base_url(); ?>css/fileinput.css" media="all" rel="stylesheet" type="text/css" />    <link href="<?php echo base_url(); ?>css/plugins/iCheck/custom.css" media="all" rel="stylesheet" type="text/css" />    <link href="<?php echo base_url(); ?>css/animate.css" media="all" rel="stylesheet" type="text/css" />    <link href="<?php echo base_url(); ?>css/style.css" media="all" rel="stylesheet" type="text/css" />    <link href="<?php echo base_url(); ?>css/sweetalert.css" media="all" rel="stylesheet" type="text/css" />        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->    <script src="<?php echo base_url(); ?>js/jquery-2.1.1.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/fileinput.js"   type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/locales/es.js" type="text/javascript"></script>    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/jquery.metisMenu.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/jquery.slimscroll.min.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/inspinia.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/pace.min.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/icheck.min.js" type="text/javascript"></script>    <!--<script src="<?php echo base_url(); ?>js/jasny-bootstrap.min.js" type="text/javascript"></script>-->    <script src="<?php echo base_url(); ?>js/consulta_medica.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/sweetalert.min.js" type="text/javascript"></script>    <script src="<?php echo base_url(); ?>js/validador_rut.js" type="text/javascript"></script>    </head><?php       switch ($session["id_perfil"]) {              case '1':                         $skin = 'pace-done skin-1';                         break;                    case '2':                         $skin = 'pace-done skin-3';                         break;                    case '3':                         $skin = 'pace-done';                         break;                                 case '4':                        $skin = 'pace-done skin-3';                  break;          }                         ?>   <body data-baseurl="<?=base_url()?>" class="<?=$skin;?>">
