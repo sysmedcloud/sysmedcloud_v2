@@ -261,15 +261,33 @@ class Perfil_admin extends CI_Controller {
                     $respuesta = array();
                     // Sube archvio a servidor
                     if( count($_FILES) > 0 )                    {
+                        
                         $nombre_file = $_FILES['foto_perfil']['name'];                        
+                        
                         $array_nombre_file = explode( ".", $nombre_file );                        
+                        
                         $nombre_file = date('Ymd').time().".".array_pop( $array_nombre_file );
+                        
                         $ruta_temp = $_FILES['foto_perfil']['tmp_name'];
-                        $ruta_file = getcwd()."/img/foto_perfil/".$nombre_file;                        
+                        
+                        //Validar tipo de usuario
+                        if($data["session"]["id_perfil"] == 4){//Paciente
+                            
+                            $ruta_file = getcwd()."/img/pacientes/".$nombre_file;                        
+                            
+                        }else{
+                            
+                            $ruta_file = getcwd()."/img/foto_perfil/".$nombre_file;                        
+                        }
+                        
                         move_uploaded_file($ruta_temp, $ruta_file);
+
                         $param["id_usuario"]    = $data["session"]["id_usuario"];
+
                         $param["foto"]          = $nombre_file;                                                
-                        $resp = $this->perfil_model->update_img( $param );                                               
+
+                        $resp = $this->perfil_model->update_img( $param ); 
+                        
                         if( $resp )
                         {
                             $respuesta = array( "estado" => 'true', "imagen" => $resp[0]['imagen'] );
