@@ -11,19 +11,19 @@ class Reportes_model extends CI_Model
         $query = $this->db->query("SELECT 
                                         *  
                                     FROM tbl_usuarios tu 
-                                    JOIN tbl_historias_medicas thm on thm.id_paciente = tu.id_usuario
-                                    JOIN tbl_estado_civil tec ON tec.id_estado_civil = tu.id_estado_civil
-                                    JOIN tbl_ocupaciones tbo on tbo.cod_ocupacion = tu.id_ocupacion
-                                    JOIN tbl_region tr on tr.region_id = tu.id_region
-                                    JOIN tbl_comuna tc on tc.COMUNA_ID = tu.id_comuna
-                                    JOIN tbl_provincia tpro on tpro.PROVINCIA_ID = tu.id_provincia
-                                    JOIN tbl_paises tp on tp.cod_pais = tu.nacionalidad
-                                    JOIN tbl_ocupaciones toc on toc.cod_ocupacion = tu.id_ocupacion
-                                    JOIN tbl_previsiones_medicas tpm on tpm.id_prevision_medica = tu.id_prevision
-                                    JOIN tbl_religiones tre on tre.id_religion = tu.id_religion
-                                    JOIN tbl_niveles_estudios tne on tne.id_nivel_estudio = tu.id_nivel_estudio
-                                    JOIN tbl_factores_rh tfrh on tfrh.id_factor_rh = tu.id_factorn_rh
-                                    JOIN tbl_grupos_sanguineos tgs on tgs.id_grupo_sanguineo = tu.id_grupo_sang
+                                    left JOIN tbl_historias_medicas thm on thm.id_paciente = tu.id_usuario
+                                    left JOIN tbl_estado_civil tec ON tec.id_estado_civil = tu.id_estado_civil
+                                    left JOIN tbl_ocupaciones tbo on tbo.cod_ocupacion = tu.id_ocupacion
+                                    left JOIN tbl_region tr on tr.region_id = tu.id_region
+                                    left JOIN tbl_comuna tc on tc.COMUNA_ID = tu.id_comuna
+                                    left JOIN tbl_provincia tpro on tpro.PROVINCIA_ID = tu.id_provincia
+                                    left JOIN tbl_paises tp on tp.cod_pais = tu.nacionalidad
+                                    left JOIN tbl_ocupaciones toc on toc.cod_ocupacion = tu.id_ocupacion
+                                    left JOIN tbl_previsiones_medicas tpm on tpm.id_prevision_medica = tu.id_prevision
+                                    left JOIN tbl_religiones tre on tre.id_religion = tu.id_religion
+                                    left JOIN tbl_niveles_estudios tne on tne.id_nivel_estudio = tu.id_nivel_estudio
+                                    left JOIN tbl_factores_rh tfrh on tfrh.id_factor_rh = tu.id_factorn_rh
+                                    left JOIN tbl_grupos_sanguineos tgs on tgs.id_grupo_sanguineo = tu.id_grupo_sang
                                     WHERE replace(replace(rut, '.', ''), '-', '') = '" . $rut ."'" );
         $r = $query->result_array();            
         $data = array();

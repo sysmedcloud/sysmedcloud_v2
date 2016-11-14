@@ -6,8 +6,17 @@
             <div id="grafico_pie" style="float:left" class ="col-lg-6"></div>  
             <div id="grafico_pie2" style="float:left" class ="col-lg-6"></div>         
           </div>
-          <div class="row">
-               <button class="btn btn-primary col-sm-3" onclick="modal_info()">Gestionar datos</button>            
+          <div class="row">               
+            <div onclick="modal_info();" class="widget lazur-bg" style="cursor: pointer;background-color: #FFF;color:#7CB5EC;margin: 0px;">
+            <div class="row vertical-align">
+               <div class="col-xs-3">
+                  <i class="fa fa-users fa-3x"></i>
+               </div>
+               <div class="col-xs-9 text-right">
+                  <h2 class="font-bold">Ingresar / Actualizar / Eliminar Información</h2>
+               </div>
+            </div>
+         </div>            
           </div>
        </div>
    </div>
@@ -75,7 +84,7 @@
 	      <h5>Gestión de Datos <small> <span id="spntipo"></span> </small></h5>	 
          <div class="ibox-tools">            
              <a onclick="window.location.reload();" >
-                 <i class="fa fa-plus"></i> Nueva Consulta
+                 <i class="fa fa-plus"></i> <b>Gestionar más datos</b>
              </a>
          </div>    
 	   </div>

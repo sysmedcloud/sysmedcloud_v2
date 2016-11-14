@@ -2,13 +2,13 @@
 
 <div class="wrapper wrapper-content">
 
-   <div class="row">
+   <div class="row animated fadeInRight">
 
       <div class="col-lg-6">
 
          <div class="ibox float-e-margins">
 
-            <div class="ibox-title">
+            <div class="ibox-title ">
 
                <span class="label label-info pull-right"></span>
 
@@ -58,7 +58,7 @@
 
    </div>
    <br>
-   <div class="row">
+   <div class="row animated fadeInLeft">
 
       <div class="col-lg-12">
 

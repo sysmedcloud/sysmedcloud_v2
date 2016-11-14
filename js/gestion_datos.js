@@ -1,6 +1,6 @@
 // Gestion de datos (Mantenedores)
 $(document).ready(function() {    
-    render_grafico_balance();
+    modal_info();
 });
 
 

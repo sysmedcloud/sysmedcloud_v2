@@ -70,7 +70,7 @@
                    $skin = 'pace-done';      
                    break;                   
               case '4':      
-                  $skin = 'pace-done skin-3';
+                  $skin = 'pace-done';
                   break;
           } 
       

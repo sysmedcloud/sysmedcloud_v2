@@ -2,7 +2,7 @@
 
 <div class="wrapper wrapper-content">
 
-   <div class="row">
+   <div class="row animated fadeInRight">
 
       <div class="col-lg-3">
 
@@ -110,7 +110,7 @@
 
    </div>
 
-   <div class="row">
+   <div class="row animated fadeInLeft">
 
       <div  id="cm_pacientes_genero" style="min-width: 310px; height: 300px; max-width: 600px; margin: 0 auto" class="col-lg-6">
 
@@ -158,7 +158,7 @@
 
    <br>
 
-   <div class="row">
+   <div class="row animated fadeInRight">
 
       <div class="col-lg-6">
 
@@ -262,7 +262,7 @@
 
    </div>
 
-   <div class="row">
+   <div class="row animated fadeInLeft">
 
       <div class="col-lg-12">
 
