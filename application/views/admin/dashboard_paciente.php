@@ -68,7 +68,7 @@
 
                <div class="col-xs-3">
 
-                  <i class="fa fa-users fa-3x"></i>
+                  <i class="fa fa-user fa-3x"></i>
 
                </div>
 
