@@ -21,7 +21,7 @@
             <select class="form-control m-b" name="reportes" id="sel_reportes_cli">
               <option value="0">--</option>
               <option value="7">Fícha Clínica Paciente</option>
-              <option value="8">Reporte Consultas Médicas Paciente</option>
+              <!--<option value="8">Reporte Consultas Médicas Paciente</option>-->
             </select>
           </div>
         </div>
